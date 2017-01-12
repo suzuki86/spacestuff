@@ -1,7 +1,7 @@
 require "spacestuff/version"
 require 'spacestuff/configuration'
 require 'spacestuff/option'
-require "RMagick"
+require "rmagick"
 
 module Spacestuff
   class Setup
