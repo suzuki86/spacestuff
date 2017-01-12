@@ -4,11 +4,7 @@ module Spacestuff
       config = {
         :categories => [
           "sushi",
-          "broccoli",
-          "tomato",
           "mashroom",
-          "gorilla",
-          "cat"
         ],
         :min_x => 0,
         :min_y => 0,
