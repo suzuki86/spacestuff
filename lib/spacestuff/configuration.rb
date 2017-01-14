@@ -5,6 +5,7 @@ module Spacestuff
         :categories => [
           "sushi",
           "mashroom",
+          "cat",
         ],
         :min_x => 0,
         :min_y => 0,
