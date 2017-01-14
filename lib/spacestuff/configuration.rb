@@ -8,6 +8,7 @@ module Spacestuff
           "cat",
           "banana",
           "broccoli",
+          "dog",
         ],
         :min_x => 0,
         :min_y => 0,
