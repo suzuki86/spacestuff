@@ -6,6 +6,7 @@ module Spacestuff
           "sushi",
           "mashroom",
           "cat",
+          "banana",
         ],
         :min_x => 0,
         :min_y => 0,
