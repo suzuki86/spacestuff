@@ -56,6 +56,10 @@ module Spacestuff
           modified_stuff = modified_stuff
         end
 
+        # Change stuff resolution
+        magnification = rand(0.5..1.5)
+        modified_stuff = modified_stuff.resize_to_fit(stuff_width * magnification, stuff_height * magnification)
+
         modified_stuff.background_color = "none"
         modified_stuff = modified_stuff.rotate(rand(0..360))
 
