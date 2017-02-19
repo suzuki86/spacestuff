@@ -14,7 +14,7 @@ module Spacestuff
         :min_y => 0,
         :default_filename => "result.jpg",
         :min_stuff_count => 1,
-        :max_stuff_count => 5,
+        :max_stuff_count => 7,
         :image_format => "JPEG",
         :image_quality => 50
       }
