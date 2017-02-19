@@ -19,9 +19,11 @@ module Spacestuff
       opt.on('-o [OUTPUT_FILENAME]') do |v|
         options[:output_filename] = v
       end
+      opt.on('-n [NUMBER_OF_STUFF]') do |v|
+        options[:number_of_stuff] = v.to_i
+      end
       opt.parse!(argv)
       options
-
     end
   end
 end

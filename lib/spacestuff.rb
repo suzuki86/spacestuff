@@ -29,6 +29,11 @@ module Spacestuff
         stuff = Magick::Image.read(stuff_list.sample).first
       end
 
+      if options[:number_of_stuff] then
+        min_stuff_count = options[:number_of_stuff]
+        max_stuff_count = options[:number_of_stuff]
+      end
+
       bg_width = bg.columns
       bg_height = bg.rows
       stuff_width = stuff.columns
@@ -37,13 +42,18 @@ module Spacestuff
       max_x = bg_width - stuff_width
       max_y = bg_height - stuff_height
       filename = options[:output_filename] || config[:default_filename]
-      min_stuff_count = config[:min_stuff_count]
-      max_stuff_count = config[:max_stuff_count]
+      min_stuff_count = min_stuff_count || config[:min_stuff_count]
+      max_stuff_count = max_stuff_count || config[:max_stuff_count]
       image_format = config[:image_format]
       image_quality = config[:image_quality]
 
-      rand(min_stuff_count..max_stuff_count).times do
+      if min_stuff_count == max_stuff_count then
+        number_of_stuff = min_stuff_count
+      else
+        number_of_stuff = rand(min_stuff_count..max_stuff_count)
+      end
 
+      number_of_stuff.times do
         if rand(0..2) == 0 then
           modified_stuff = stuff.flip
         else
@@ -73,8 +83,8 @@ module Spacestuff
           rand(config[:min_y]..max_y),
           Magick::OverCompositeOp
         )
-
       end
+
       @result.write(filename) do
         self.format = image_format
         self.quality = image_quality
